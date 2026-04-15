@@ -1,0 +1,35 @@
+.clothingSection {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  bottom: 90%;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+  column-gap: 55px;
+  row-gap: 30px;
+}
+
+.rectangle {
+  width: 200px;
+  height: 300px;
+  color: grey;
+  border: 4px solid;
+}
+
+.rectangle:hover {
+  color: white;
+}
+
+/* Responsive: 2 columns for tablets, 1 for mobile */
+/* @media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+} */
