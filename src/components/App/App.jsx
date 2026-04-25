@@ -14,11 +14,10 @@ function App() {
       <div className="app__canvas-wrapper">
         <Canvas camera={{ position: [0, 0, 5] }}>
           <TopoBackground />
+          <ClothingSection />
         </Canvas>
       </div>
-
       <NavBar />
-      <ClothingSection />
     </main>
   );
 }

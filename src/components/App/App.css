@@ -10,7 +10,6 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* Keeps it behind everything */
-  /* z-index: -1;  */
-  background: #0a0a0a; /* Fallback color */
+  /* Fallback color */
+  background: #0a0a0a;
 }
