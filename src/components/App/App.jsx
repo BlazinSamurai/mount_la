@@ -1,7 +1,7 @@
 import "./App.css";
 
 import * as THREE from "three";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 
 import NavBar from "../NavBar/NavBar.jsx";
@@ -22,7 +22,11 @@ function App() {
     <main className="app">
       <div className="app__canvas-wrapper">
         <Canvas camera={{ position: [0, 0, 5] }}>
-          <TopoBackground colorOne={colorOne} colorTwo={colorTwo} />
+          <TopoBackground
+            colorOne={colorOne}
+            colorTwo={colorTwo}
+            searchClicked={false}
+          />
           <ClothingSection />
         </Canvas>
       </div>

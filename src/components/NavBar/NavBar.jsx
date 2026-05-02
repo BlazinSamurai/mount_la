@@ -8,8 +8,7 @@ import cart from "../../images/shopping_cart.svg";
 import searchIcon from "../../images/map_search.svg";
 import closeIcon from "../../images/close.svg";
 
-// import TopoBackground from "../TopoBackground";
-import NavBar_TopoBckgnd from "./NavBar_TopoBckgnd";
+import TopoBackground from "../TopoBackground";
 
 function NavBar({ openSearchModal }) {
   const [inputClicked, setInputClicked] = useState(false);
@@ -52,10 +51,11 @@ function NavBar({ openSearchModal }) {
             </button>
           </section>
           <Canvas camera={{ position: [0, 0, 5] }}>
-            <NavBar_TopoBckgnd
+            <TopoBackground
               colorOne={"dedada"}
               colorTwo={"ffffff"}
               viewHeight={25}
+              searchClicked={true}
             />
           </Canvas>
         </header>

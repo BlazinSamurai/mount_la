@@ -1,15 +1,17 @@
 import * as THREE from "three";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 
 import topoVertexShader from "../shaders/Topograph/vertex.glsl";
 import topoFragmentShader from "../shaders/Topograph/fragment.glsl";
 
-const TopoBackground = ({ colorOne, colorTwo }) => {
+const TopoBackground = ({ colorOne, colorTwo, viewHeight, searchClicked }) => {
   const meshRef = useRef();
   // This hook gives us the responsive viewport size in Three.js units
   const { viewport } = useThree();
+  const [isSearchClicked, setIsSearchClikced] = useRef(searchClicked);
+  const [displayHeight, setDisplayHeight] = useState(viewport.height);
 
   const TopoShader = {
     vertexShader: topoVertexShader,
@@ -21,9 +23,15 @@ const TopoBackground = ({ colorOne, colorTwo }) => {
     },
   };
 
+  useEffect(() => {
+    if (searchClicked) {
+      setDisplayHeight(viewHeight);
+    }
+  }, [searchClicked]);
+
   return (
     <mesh ref={meshRef} position={[0, 0, 0]}>
-      <planeGeometry args={[viewport.width, viewport.height]} />
+      <planeGeometry args={[viewport.width, displayHeight]} />
       <shaderMaterial attach="material" {...TopoShader} />
     </mesh>
   );
