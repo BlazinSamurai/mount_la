@@ -8,21 +8,38 @@
 }
 
 .navBar__logo {
-  width: 167px;
-  height: 70px;
   color: white;
 }
 
 .navBar__searchBar {
   width: 352px;
   height: 45px;
-  color: white;
   background: rgba(128, 128, 128, 20%);
-  border: none;
   border-radius: 25px;
   text-align: center;
-  font-size: 25px;
-  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navBar__searchBar-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.navBar__searchBar-input {
+  background: none;
+  border: none;
+  width: 280px;
+  height: 40px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+
+.navBar__searchBar-input::placeholder {
+  color: white;
+  text-align: center;
 }
 
 .navBar__searchBar:hover {
@@ -31,7 +48,6 @@
 }
 
 .navBar__cart {
-  width: 25px;
-  height: 25px;
-  color: white;
+  width: 50px;
+  height: 50px;
 }

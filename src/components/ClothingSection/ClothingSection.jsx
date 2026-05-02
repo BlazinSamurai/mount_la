@@ -19,10 +19,10 @@ const ClothingSection = () => {
     // https://github.com/pmndrs/react-three-flex/blob/master/README.md#sizing
 
     <Flex
-      position={[-4.5, -0.5, 0]}
+      position={[0.0, -0.5, 0]}
       // size={[5, 5, 0]}
-      flexDirection="column"
-      flexWrap="wrap"
+      flexDirection="row"
+      // flexWrap="wrap"
       justifyContent="center"
       alignItems="center"
     >
@@ -48,7 +48,7 @@ const ClothingSection = () => {
           />
         </mesh>
       </Box>
-      <Box centerAnchor>
+      {/* <Box centerAnchor>
         <mesh>
           <planeGeometry args={[2, 3]} />
           <meshBasicMaterial
@@ -58,17 +58,15 @@ const ClothingSection = () => {
           />
         </mesh>
       </Box>
-
-      {/* White Style Tee Shirt */}
-      {/* Video */}
+      White Style Tee Shirt Video
       <Box centerAnchor>
         <mesh>
-          {/* 2. Apply to a plane with the same aspect ratio as your render */}
+          2. Apply to a plane with the same aspect ratio as your render
           <planeGeometry args={[2, 3]} />
           <meshBasicMaterial map={teeWht} toneMapped={false} />
         </mesh>
       </Box>
-      {/* Images: Front then Back */}
+      Images: Front then Back
       <Box centerAnchor>
         <mesh>
           <planeGeometry args={[2, 3]} />
@@ -88,7 +86,7 @@ const ClothingSection = () => {
             transparent={true}
           />
         </mesh>
-      </Box>
+      </Box> */}
     </Flex>
   );
 };
