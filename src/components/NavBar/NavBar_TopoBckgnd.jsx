@@ -3,10 +3,10 @@ import * as THREE from "three";
 import { useRef } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 
-import topoVertexShader from "../shaders/Topograph/vertex.glsl";
-import topoFragmentShader from "../shaders/Topograph/fragment.glsl";
+import topoVertexShader from "../../shaders/Topograph/vertex.glsl";
+import topoFragmentShader from "../../shaders/Topograph/fragment.glsl";
 
-const TopoBackground = ({ colorOne, colorTwo }) => {
+const NavBar_TopoBckgnd = ({ colorOne, colorTwo, viewHeight }) => {
   const meshRef = useRef();
   // This hook gives us the responsive viewport size in Three.js units
   const { viewport } = useThree();
@@ -23,10 +23,10 @@ const TopoBackground = ({ colorOne, colorTwo }) => {
 
   return (
     <mesh ref={meshRef} position={[0, 0, 0]}>
-      <planeGeometry args={[viewport.width, viewport.height]} />
+      <planeGeometry args={[viewport.width, viewHeight]} />
       <shaderMaterial attach="material" {...TopoShader} />
     </mesh>
   );
 };
 
-export default TopoBackground;
+export default NavBar_TopoBckgnd;

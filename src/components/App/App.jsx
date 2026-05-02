@@ -9,15 +9,24 @@ import ClothingSection from "../ClothingSection/ClothingSection.jsx";
 import TopoBackground from "../TopoBackground.jsx";
 
 function App() {
+  const [colorOne, setColorOne] = useState("000000");
+  const [colorTwo, setColorTwo] = useState("a0a2a5");
+
+  function openSearchModal() {
+    console.log("Search Bar Clicked.");
+    setColorOne("a0a2a5");
+    setColorTwo("000000");
+  }
+
   return (
     <main className="app">
       <div className="app__canvas-wrapper">
         <Canvas camera={{ position: [0, 0, 5] }}>
-          <TopoBackground />
+          <TopoBackground colorOne={colorOne} colorTwo={colorTwo} />
           <ClothingSection />
         </Canvas>
       </div>
-      <NavBar />
+      <NavBar openSearchModal={openSearchModal} />
     </main>
   );
 }

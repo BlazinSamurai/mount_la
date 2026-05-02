@@ -1,5 +1,4 @@
 uniform float uTime;
-uniform vec2 uMouse; // New mouse uniform
 uniform vec3 uColorBase;
 uniform vec3 uColorLine;
 varying vec2 vUv;
