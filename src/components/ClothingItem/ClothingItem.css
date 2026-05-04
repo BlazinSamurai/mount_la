@@ -1,0 +1,36 @@
+.clothing-section__item-container {
+  width: 200px;
+  height: 200px;
+  border: 3px solid grey;
+  padding-bottom: 60px;
+  position: relative;
+  display: block;
+}
+
+.clothing-section__item-container:hover {
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.clothing-section__item-preview {
+  width: 500px;
+  height: 500px;
+  border: 3px solid white;
+}
+
+.clothing-section__item-img {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.bck-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.clothing-section__item-container:hover .bck-img {
+  opacity: 1;
+}

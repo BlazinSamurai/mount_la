@@ -12,19 +12,6 @@
   row-gap: 35px;
 }
 
-/* clothing-section__item */
-.clothing-section__item {
-  width: 200px;
-  height: 200px;
-  border: 3px solid grey;
-  padding-bottom: 60px;
-}
-
-.clothing-section__item:hover {
-  border: 3px solid white;
-  cursor: pointer;
-}
-
 /* Responsive: 2 columns for tablets, 1 for mobile */
 /* @media (max-width: 1024px) {
   .product-grid {
