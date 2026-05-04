@@ -41,7 +41,6 @@ function NavBar({ openSearchModal }) {
                 maxLength={15}
               />
             </search>
-            <img src={cart} alt="Cart Icon" className="navBar__cart" />
             <button className="navBar__close-btn" onClick={handleSearchClose}>
               <img
                 src={closeIcon}

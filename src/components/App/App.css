@@ -1,7 +1,7 @@
 .app {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .app__canvas-wrapper {
@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   /* Fallback color */
   background: #0a0a0a;
 }

@@ -1,9 +1,15 @@
-import "./ClothingSection.css";
+// import "./ClothingSection.css";
 
 import * as THREE from "three";
 
 import React, { useRef, useState } from "react";
-import { useTexture, useVideoTexture, Center } from "@react-three/drei";
+import {
+  Center,
+  ScrollControls,
+  Scroll,
+  useTexture,
+  useVideoTexture,
+} from "@react-three/drei";
 import { Flex, Box } from "@react-three/flex";
 import { Canvas, useFrame } from "@react-three/fiber";
 
@@ -18,76 +24,130 @@ const ClothingSection = () => {
   return (
     // https://github.com/pmndrs/react-three-flex/blob/master/README.md#sizing
 
-    <Flex
-      position={[0.0, -0.5, 0]}
-      // size={[5, 5, 0]}
-      flexDirection="row"
-      // flexWrap="wrap"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Box centerAnchor>
-        {/* 
-          Black Style Tee Shirt 
-          Video 
-        */}
+    <ScrollControls pages={3} damping={0.1}>
+      <Scroll>
+        <Flex
+          position={[-6, 2, 0]}
+          flexDirection={"row"}
+          flexWrap={"wrap"}
+          size={[8, 0, 0]}
+          // paddingRight={10}
+          // margin={10}
+          onReflow={({ height }) => console.log("Total height:", height)}
+        >
+          {/* <Box centerAnchor>
         <mesh>
-          {/* 2. Apply to a plane with the same aspect ratio as your render */}
           <planeGeometry args={[2, 3]} />
           <meshBasicMaterial map={teeBlk} toneMapped={false} />
         </mesh>
-      </Box>
-      <Box centerAnchor>
-        {/* Images: Front then Back */}
+      </Box> */}
+          <Box centerAnchor>
+            {/* Images: Front then Back */}
+            <mesh>
+              <planeGeometry args={[2, 3]} />
+              <meshBasicMaterial
+                map={blkTeeFrnt}
+                toneMapped={false}
+                transparent={true}
+              />
+            </mesh>
+          </Box>
+          <Box centerAnchor>
+            <mesh>
+              <planeGeometry args={[2, 3]} />
+              <meshBasicMaterial
+                map={blkTeeBck}
+                toneMapped={false}
+                transparent={true}
+              />
+            </mesh>
+          </Box>
+          {/* White Style Tee Shirt Video */}
+          {/* <Box centerAnchor>
         <mesh>
-          <planeGeometry args={[2, 3]} />
-          <meshBasicMaterial
-            map={blkTeeFrnt}
-            toneMapped={false}
-            transparent={true}
-          />
-        </mesh>
-      </Box>
-      {/* <Box centerAnchor>
-        <mesh>
-          <planeGeometry args={[2, 3]} />
-          <meshBasicMaterial
-            map={blkTeeBck}
-            toneMapped={false}
-            transparent={true}
-          />
-        </mesh>
-      </Box>
-      White Style Tee Shirt Video
-      <Box centerAnchor>
-        <mesh>
-          2. Apply to a plane with the same aspect ratio as your render
           <planeGeometry args={[2, 3]} />
           <meshBasicMaterial map={teeWht} toneMapped={false} />
         </mesh>
-      </Box>
-      Images: Front then Back
-      <Box centerAnchor>
+      </Box> */}
+          {/* Images: Front then Back */}
+          <Box centerAnchor>
+            <mesh>
+              <planeGeometry args={[2, 3]} />
+              <meshBasicMaterial
+                map={whtTeeFrnt}
+                toneMapped={false}
+                transparent={true}
+              />
+            </mesh>
+          </Box>
+          <Box centerAnchor>
+            <mesh>
+              <planeGeometry args={[2, 3]} />
+              <meshBasicMaterial
+                map={whtTeeBck}
+                toneMapped={false}
+                transparent={true}
+              />
+            </mesh>
+          </Box>
+          {/* <Box centerAnchor>
         <mesh>
           <planeGeometry args={[2, 3]} />
-          <meshBasicMaterial
-            map={whtTeeFrnt}
-            toneMapped={false}
-            transparent={true}
-          />
-        </mesh>
-      </Box>
-      <Box centerAnchor>
-        <mesh>
-          <planeGeometry args={[2, 3]} />
-          <meshBasicMaterial
-            map={whtTeeBck}
-            toneMapped={false}
-            transparent={true}
-          />
+          <meshBasicMaterial map={teeBlk} toneMapped={false} />
         </mesh>
       </Box> */}
-    </Flex>
+          <Box centerAnchor>
+            {/* Images: Front then Back */}
+            <mesh>
+              <planeGeometry args={[2, 3]} />
+              <meshBasicMaterial
+                map={blkTeeFrnt}
+                toneMapped={false}
+                transparent={true}
+              />
+            </mesh>
+          </Box>
+          <Box centerAnchor>
+            <mesh>
+              <planeGeometry args={[2, 3]} />
+              <meshBasicMaterial
+                map={blkTeeBck}
+                toneMapped={false}
+                transparent={true}
+              />
+            </mesh>
+          </Box>
+          {/* White Style Tee Shirt Video */}
+          {/* <Box centerAnchor>
+        <mesh>
+          <planeGeometry args={[2, 3]} />
+          <meshBasicMaterial map={teeWht} toneMapped={false} />
+        </mesh>
+      </Box> */}
+          {/* Images: Front then Back */}
+          <Box centerAnchor>
+            <mesh>
+              <planeGeometry args={[2, 3]} />
+              <meshBasicMaterial
+                map={whtTeeFrnt}
+                toneMapped={false}
+                transparent={true}
+              />
+            </mesh>
+          </Box>
+          <Box centerAnchor>
+            <mesh>
+              <planeGeometry args={[2, 3]} />
+              <meshBasicMaterial
+                map={whtTeeBck}
+                toneMapped={false}
+                transparent={true}
+              />
+            </mesh>
+          </Box>
+        </Flex>
+      </Scroll>
+    </ScrollControls>
   );
 };
 
