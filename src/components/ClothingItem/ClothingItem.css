@@ -9,7 +9,6 @@
 
 .clothing-section__item-container:hover {
   border: 3px solid white;
-  cursor: pointer;
 }
 
 .clothing-section__item-preview {
@@ -33,4 +32,39 @@
 
 .clothing-section__item-container:hover .bck-img {
   opacity: 1;
+  cursor: pointer;
+}
+
+.clothing-section__colors-container {
+  color: white;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.clothing-section__colors {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+}
+
+.clothing-section__color {
+  border: 1px solid grey;
+  border-radius: 25px;
+  width: 25px;
+  height: 10px;
+}
+
+.clothing-section__color:hover {
+  cursor: pointer;
+  border: 1px solid #ffffff;
+}
+
+.clothing-section__small-imgs {
+  height: 37px;
+}
+
+.small-img__one {
+  width: 40px;
 }

@@ -75,3 +75,19 @@
   flex-grow: 1;
   margin: 0 10px;
 }
+
+.itemPreview__info-colors {
+  display: flex;
+  column-gap: 20px;
+}
+
+.itemPreview__color {
+  width: 40px;
+  height: 40px;
+  border: 3px solid gray;
+  border-radius: 25px;
+}
+
+.itemPreview__color:hover {
+  border: 3px solid #ffffff;
+}
