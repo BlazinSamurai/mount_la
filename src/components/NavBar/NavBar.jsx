@@ -9,10 +9,12 @@ import cart from "../../images/shopping_cart.svg";
 import searchIcon from "../../images/map_search.svg";
 import closeIcon from "../../images/close.svg";
 
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import TopoBackground from "../TopoBackground";
 
-function NavBar({ openSearchModal }) {
+function NavBar() {
   const [inputClicked, setInputClicked] = useState(false);
+  const [cartClicked, setCartClicked] = useState(false);
 
   function handleInputClicked() {
     setInputClicked(true);
@@ -20,6 +22,14 @@ function NavBar({ openSearchModal }) {
 
   function handleSearchClose() {
     setInputClicked(false);
+  }
+
+  function handleCartClicked() {
+    setCartClicked(true);
+  }
+
+  function handleCartClose() {
+    setCartClicked(false);
   }
 
   return (
@@ -77,9 +87,17 @@ function NavBar({ openSearchModal }) {
               onClick={handleInputClicked}
             />
           </search>
-          <img src={cart} alt="Cart Icon" className="navBar__cart" />
+          <img
+            src={cart}
+            alt="Cart Icon"
+            className="navBar__cart"
+            onClick={handleCartClicked}
+          />
         </header>
       )}
+      {cartClicked ? (
+        <ShoppingCart isOpen={cartClicked} handleCartClose={handleCartClose} />
+      ) : null}
     </>
   );
 }

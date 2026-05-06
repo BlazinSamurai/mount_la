@@ -5,19 +5,15 @@
   position: relative;
   display: flex;
   justify-content: space-around;
-  /* visibility: none; */
 }
 
 .navBar__change {
   visibility: visible;
-  /* position: relative; */
 }
 
 .navBar__change-content {
   width: 100vw;
   position: fixed;
-  /* top: 0;
-  left: 0; */
   z-index: 5;
   margin: 25px 25px 0 25px;
   padding-bottom: 168px;
@@ -69,6 +65,10 @@
 .navBar__cart {
   width: 50px;
   height: 50px;
+}
+
+.navBar__cart:hover {
+  cursor: pointer;
 }
 
 .navBar__close-btn {

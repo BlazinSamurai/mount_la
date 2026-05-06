@@ -1,0 +1,10 @@
+.shoppingCart {
+  width: 50%;
+  height: 100%;
+  background-color: bisque;
+  visibility: hidden;
+}
+
+.shoppingCart__opened {
+  visibility: visible;
+}

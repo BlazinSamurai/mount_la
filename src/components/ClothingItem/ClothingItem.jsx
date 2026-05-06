@@ -13,8 +13,18 @@ function ClothingItem({ product }) {
   );
   const [openPreview, setOpenPreview] = useState(false);
 
-  function closePreview() {
-    setOpenPreview(false);
+  function preventDefault(e) {
+    e.preventDefault();
+  }
+
+  function disableScroll() {
+    window.addEventListener("wheel", preventDefault, { passive: false });
+    window.addEventListener("touchmove", preventDefault, { passive: false });
+  }
+
+  function enableScroll() {
+    window.removeEventListener("wheel", preventDefault);
+    window.removeEventListener("touchmove", preventDefault);
   }
 
   function handleColorChng(productObj, itemColorHex) {
@@ -30,6 +40,16 @@ function ClothingItem({ product }) {
     }
   }
 
+  function handlePreviewOpen() {
+    disableScroll();
+    setOpenPreview(true);
+  }
+
+  function closePreview() {
+    setOpenPreview(false);
+    enableScroll();
+  }
+
   return (
     <>
       <div className="clothing-section__item-container">
@@ -42,9 +62,7 @@ function ClothingItem({ product }) {
           src={backupImg}
           alt={product.alt}
           className="clothing-section__item-img bck-img"
-          onClick={() => {
-            setOpenPreview(true);
-          }}
+          onClick={handlePreviewOpen}
         />
         <div className="clothing-section__colors-container">
           Colors:
@@ -64,18 +82,14 @@ function ClothingItem({ product }) {
           </div>
         </div>
       </div>
-
-      {openPreview ? (
-        <ItemPreview
-          handlePreview={closePreview}
-          currentColorName={currentColorName}
-          currentImg={backupImg}
-          otherImg={currentImg}
-          altTxt={product.alt}
-          product={product}
-          //   handleColorChng={handleColorChng}
-        />
-      ) : null}
+      <ItemPreview
+        handlePreview={closePreview}
+        currentColorName={currentColorName}
+        currentImg={backupImg}
+        altTxt={product.alt}
+        product={product}
+        isOpen={openPreview}
+      />
     </>
   );
 }

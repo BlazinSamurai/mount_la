@@ -28,16 +28,28 @@ function ClothingSection() {
 
   const products = [
     {
-      id: `Over_size_tee_shirt_` + i++,
+      id: "Over_size_tee_shirt_" + i++,
+      name: "LA Map Tee",
+      price: "$19.95",
       alt: "Over Size Tee Shirt",
       styles: [
         {
           color: ["ffffff", "White"],
           images: [whtTeeFrnt, whtTeeBck],
+          small: 25,
+          medium: 25,
+          large: 40,
+          X_large: 0,
+          XX_large: 15,
         },
         {
           color: ["000000", "Black"],
           images: [blkTeeFrnt, blkTeeBck],
+          small: 25,
+          medium: 25,
+          large: 40,
+          X_large: 20,
+          XX_large: 0,
         },
       ],
     },

@@ -25,7 +25,7 @@ function App() {
         <Canvas camera={{ position: [0, 0, 5] }}>
           <ScrollControls>
             <Html fullscreen>
-              <NavBar openSearchModal={openSearchModal} />
+              <NavBar />
               <ClothingSection />
             </Html>
             <TopoBackground
