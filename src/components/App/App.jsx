@@ -14,9 +14,18 @@ function App() {
   const [colorOne, setColorOne] = useState("000000");
   const [colorTwo, setColorTwo] = useState("a0a2a5");
 
-  function openSearchModal() {
-    setColorOne("a0a2a5");
-    setColorTwo("000000");
+  function preventDefault(e) {
+    e.preventDefault();
+  }
+
+  function disableScroll() {
+    window.addEventListener("wheel", preventDefault, { passive: false });
+    window.addEventListener("touchmove", preventDefault, { passive: false });
+  }
+
+  function enableScroll() {
+    window.removeEventListener("wheel", preventDefault);
+    window.removeEventListener("touchmove", preventDefault);
   }
 
   return (
@@ -25,8 +34,14 @@ function App() {
         <Canvas camera={{ position: [0, 0, 5] }}>
           <ScrollControls>
             <Html fullscreen>
-              <NavBar />
-              <ClothingSection />
+              <NavBar
+                disableScroll={disableScroll}
+                enableScroll={enableScroll}
+              />
+              <ClothingSection
+                disableScroll={disableScroll}
+                enableScroll={enableScroll}
+              />
             </Html>
             <TopoBackground
               colorOne={colorOne}

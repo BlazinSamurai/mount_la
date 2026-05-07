@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import ItemPreview from "../ItemPreview/ItemPreview";
 
-function ClothingItem({ product }) {
+function ClothingItem({ product, enableScroll, disableScroll }) {
   const [currentImg, setCurrentImg] = useState(product.styles[0].images[0]);
   const [backupImg, setBackupImg] = useState(product.styles[0].images[1]);
   const [currentColor, setCurrentColor] = useState(product.styles[0].color[0]);
@@ -12,20 +12,6 @@ function ClothingItem({ product }) {
     product.styles[0].color[1],
   );
   const [openPreview, setOpenPreview] = useState(false);
-
-  function preventDefault(e) {
-    e.preventDefault();
-  }
-
-  function disableScroll() {
-    window.addEventListener("wheel", preventDefault, { passive: false });
-    window.addEventListener("touchmove", preventDefault, { passive: false });
-  }
-
-  function enableScroll() {
-    window.removeEventListener("wheel", preventDefault);
-    window.removeEventListener("touchmove", preventDefault);
-  }
 
   function handleColorChng(productObj, itemColorHex) {
     if (itemColorHex !== currentColor) {

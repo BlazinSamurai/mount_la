@@ -19,8 +19,6 @@ function ItemPreview({
   const [currentPreviewColorName, setCurrentPreviewColorName] =
     useState(currentColorName);
 
-  const [available, setAvailable] = useRef();
-
   function handlePreviewChng(colorClickedName, colorClickedHex, productObj) {
     if (currentPreviewColorName !== colorClickedName) {
       setCurrentPreviewColorName(colorClickedName);
@@ -33,7 +31,6 @@ function ItemPreview({
   }
 
   function addItem(color, itemImg) {
-    // console.log(product);
     <ShoppingCart item={product} itemColor={color} itemImg={itemImg} />;
   }
 
@@ -44,7 +41,7 @@ function ItemPreview({
 
   return (
     <>
-      {isOpen ? (
+      {isOpen && (
         <div className="itemPreview">
           <div className="itemPreview__container">
             <img
@@ -84,7 +81,7 @@ function ItemPreview({
                     );
                   }
                   return null;
-                  // NEED TO UPDATE: i++;, need a better way to iterate through
+                  // NEED TO UPDATE: need a better way to iterate through
                   //                image array.
                 })}
               </div>
@@ -128,10 +125,12 @@ function ItemPreview({
                 <li className="itemPreview__size">XL</li>
                 <li className="itemPreview__size">2X</li>
               </ul>
+              <span className="itemPreview__info-dividor"></span>
+              <button className="itemPreview__info-add-btn">Add to Cart</button>
             </div>
           </div>
         </div>
-      ) : null}
+      )}
     </>
   );
 }

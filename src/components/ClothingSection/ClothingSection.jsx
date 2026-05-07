@@ -20,7 +20,7 @@ import blkTeeBck from "/Blk_Oversize_T_back.png";
 import whtTeeBck from "/Wht_Oversize_T_back.png";
 import whtTeeFrnt from "/Wht_Oversize_T_front.png";
 
-function ClothingSection() {
+function ClothingSection({ enableScroll, disableScroll }) {
   // const teeBlk = useVideoTexture("/Tee_LosAngeles_blk.mkv");
   // const teeWht = useVideoTexture("/Tee_LosAngeles_wht.mkv");
 
@@ -59,7 +59,12 @@ function ClothingSection() {
     <section className="clothing-section">
       <div className="clothing-section__items">
         {products.map((product) => (
-          <ClothingItem key={product.id} product={product} />
+          <ClothingItem
+            key={product.id}
+            product={product}
+            enableScroll={enableScroll}
+            disableScroll={disableScroll}
+          />
         ))}
       </div>
     </section>

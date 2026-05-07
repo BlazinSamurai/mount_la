@@ -12,24 +12,28 @@ import closeIcon from "../../images/close.svg";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import TopoBackground from "../TopoBackground";
 
-function NavBar() {
+function NavBar({ enableScroll, disableScroll }) {
   const [inputClicked, setInputClicked] = useState(false);
   const [cartClicked, setCartClicked] = useState(false);
 
   function handleInputClicked() {
+    disableScroll();
     setInputClicked(true);
   }
 
   function handleSearchClose() {
     setInputClicked(false);
+    enableScroll();
   }
 
   function handleCartClicked() {
+    disableScroll();
     setCartClicked(true);
   }
 
   function handleCartClose() {
     setCartClicked(false);
+    enableScroll();
   }
 
   return (
