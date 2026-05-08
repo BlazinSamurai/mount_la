@@ -44,8 +44,6 @@ function App() {
           />
           {/* 3D models */}
           <Promo />
-          {/* View.Port acts as the master renderer for all individual <View>s */}
-          {/* <View.Port /> */}
         </Canvas>
       </div>
 
@@ -60,16 +58,6 @@ function App() {
 
         {/* Empty spacer for the "Promo Section" to give room for the 3D tee animations */}
         <section className="promo-trigger-zone" style={{ height: "100vh" }} />
-
-        {/* Empty spacer for the "Promo Section" to give room for the 3D tee animations */}
-        {/* <section className="app__promo"> */}
-        {/* 3D models */}
-        {/* <Promo />
-          <div className="app__promo-text">
-            <h2>NEW! NEW! NEW!</h2>
-            <p>Some animations and text to be added later HERE!</p>
-          </div>
-        </section> */}
 
         <NavBar />
         <ClothingSection />

@@ -48,15 +48,4 @@
   position: relative;
   display: flex;
   z-index: 3;
-
-  /* position: relative;
-  width: 100%;
-  height: 100vh; */
-  /* Only white in this specific section */
-  /* background-color: white;  */
-  /* display: flex; */
-  /* overflow: hidden; */
-  /* align-items: center; */
-  /* Ensures it sits above the fixed topography canvas */
-  /* z-index: 10;  */
 }
