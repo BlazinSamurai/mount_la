@@ -2,13 +2,8 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background-color: black;
-  overflow: hidden;
-}
-
-#root {
-  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Top: Firefox, Bottom: IE/Edge */

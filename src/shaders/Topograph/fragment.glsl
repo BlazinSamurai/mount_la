@@ -21,7 +21,7 @@ float noise (vec2 st) {
 
 void main() {
   vec2 st = vUv * 8.0; // Higher scale for more detail
-  float n = noise(st + uTime * 0.02);
+  float n = noise(st * 1.02);
 
   // 1. Create the repeating line base
   float lineCount = 12.0;
