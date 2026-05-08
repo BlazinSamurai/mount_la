@@ -42,39 +42,6 @@ const TopoBackground = ({
     },
   };
 
-  // 1. Create a "Master Timeline" that is PAUSED
-  useGSAP(
-    () => {
-      timeline.current = gsap.timeline({ paused: true });
-
-      if (!viewPosition) return;
-
-      // STREET VIEW to FISH TANK
-      timeline.current.to(camera.position, {
-        x: 0,
-        y: 4,
-        z: 0,
-        duration: 3,
-      });
-    },
-    { camera, dependencies: [viewPosition] },
-  );
-
-  // 2. Use useFrame to sync the scroll progress to the timeline
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.material.uniforms.uTime.value =
-        state.clock.getElapsedTime();
-    }
-
-    // scoll.offset is a value from 0 to 1
-    // We tell the GSAP timeline to seek to that specific percentage
-    if (timeline.current) {
-      timeline.current.seek(scroll.offset * timeline.current.duration());
-      camera.lookAt(0, camera.position.y, 0);
-    }
-  });
-
   useEffect(() => {
     if (searchClicked) {
       setDisplayHeight(viewHeight);

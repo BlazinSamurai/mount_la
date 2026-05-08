@@ -1,1 +1,6 @@
-
+.promo-3d-container {
+  /* Half the screen for 3D, half for text */
+  /* width: 50%;  */
+  flex: 1;
+  height: 100vh;
+}

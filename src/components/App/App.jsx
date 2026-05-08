@@ -1,10 +1,8 @@
 import "./App.css";
 
-import * as THREE from "three";
-import React, { useState, Suspense } from "react";
-import { Environment, Html, ScrollControls, Scroll } from "@react-three/drei";
-import { Flex } from "@react-three/flex";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { useRef, useState } from "react";
+import { View } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
 import NavBar from "../NavBar/NavBar.jsx";
 import ClothingSection from "../ClothingSection/ClothingSection.jsx";
@@ -12,8 +10,11 @@ import Promo from "../Promo/Promo.jsx";
 import TopoBackground from "../TopoBackground.jsx";
 
 import logoImg from "../../images/logo.svg";
+import headerLogo from "../../images/mt_los_angeles_logo.svg";
 
 function App() {
+  const container = useRef();
+
   const [colorOne, setColorOne] = useState("000000");
   const [colorTwo, setColorTwo] = useState("a0a2a5");
 
@@ -32,10 +33,10 @@ function App() {
   }
 
   return (
-    <main className="app">
-      {/* The 3D Layer (Fixed background) */}
+    <main className="app" ref={container}>
+      {/* Fixed background, Global Canvas */}
       <div className="app__canvas-wrapper">
-        <Canvas>
+        <Canvas eventSource={container}>
           <TopoBackground
             colorOne={colorOne}
             colorTwo={colorTwo}
@@ -43,22 +44,32 @@ function App() {
           />
           {/* 3D models */}
           <Promo />
+          {/* View.Port acts as the master renderer for all individual <View>s */}
+          {/* <View.Port /> */}
         </Canvas>
       </div>
 
       {/* The DOM Layer (Normal scrolling) */}
       <div className="app__dom-wrapper">
         {/* Page Header (Logo) triggers the 3D animation */}
-        <header>
-          <img
-            src={logoImg}
-            alt="Header Logo of Page"
-            className="app__logo-header"
-          />
+        <header className="app__header">
+          <div className="app__header-background">
+            <img src={headerLogo} alt="Logo Img" className="app__header-logo" />
+          </div>
         </header>
 
         {/* Empty spacer for the "Promo Section" to give room for the 3D tee animations */}
         <section className="promo-trigger-zone" style={{ height: "100vh" }} />
+
+        {/* Empty spacer for the "Promo Section" to give room for the 3D tee animations */}
+        {/* <section className="app__promo"> */}
+        {/* 3D models */}
+        {/* <Promo />
+          <div className="app__promo-text">
+            <h2>NEW! NEW! NEW!</h2>
+            <p>Some animations and text to be added later HERE!</p>
+          </div>
+        </section> */}
 
         <NavBar />
         <ClothingSection />

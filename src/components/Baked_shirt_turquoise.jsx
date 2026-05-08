@@ -17,12 +17,14 @@ export function BakedTurqTee(props) {
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
         <mesh
+          // negative y-position push the mesh towards the "main" section
+          // DO NOT comment out any properties or else the mesh won't render
           name="Tshirt_A-Pose"
           geometry={nodes["Tshirt_A-Pose"].geometry}
           material={materials.Mockup_Material}
-          position={[0, -10, 0]}
+          position={[0, -5, 0]}
           rotation={[Math.PI / 2, 0, 0]}
-          scale={6}
+          scale={4}
         />
       </group>
     </group>
