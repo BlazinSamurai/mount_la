@@ -3,20 +3,8 @@ import "./ClothingSection.css";
 import * as THREE from "three";
 
 import React, { useRef, useState } from "react";
-import {
-  Center,
-  Html,
-  ScrollControls,
-  Scroll,
-  useTexture,
-  useVideoTexture,
-} from "@react-three/drei";
-import { Flex, Box } from "@react-three/flex";
-import { Canvas, useFrame } from "@react-three/fiber";
 
-import NavBar from "../NavBar/NavBar.jsx";
 import ClothingItem from "../ClothingItem/ClothingItem";
-import TopoBackground from "../TopoBackground.jsx";
 
 import blkTeeFrnt from "/Blk_Oversize_T_front.png";
 import blkTeeBck from "/Blk_Oversize_T_back.png";
@@ -26,9 +14,6 @@ import whtTeeFrnt from "/Wht_Oversize_T_front.png";
 function ClothingSection({ enableScroll, disableScroll }) {
   // const teeBlk = useVideoTexture("/Tee_LosAngeles_blk.mkv");
   // const teeWht = useVideoTexture("/Tee_LosAngeles_wht.mkv");
-
-  const [colorOne, setColorOne] = useState("000000");
-  const [colorTwo, setColorTwo] = useState("a0a2a5");
 
   let i = 0;
 
@@ -141,9 +126,7 @@ function ClothingSection({ enableScroll, disableScroll }) {
 
   return (
     <>
-      {/* <Html> */}
       <section className="clothing-section">
-        {/* <NavBar /> */}
         <div className="clothing-section__items">
           {products.map((product) => (
             <ClothingItem
@@ -155,12 +138,6 @@ function ClothingSection({ enableScroll, disableScroll }) {
           ))}
         </div>
       </section>
-      {/* </Html> */}
-      {/* <TopoBackground
-        colorOne={colorOne}
-        colorTwo={colorTwo}
-        searchClicked={false}
-      /> */}
     </>
   );
 }

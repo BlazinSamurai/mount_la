@@ -36,16 +36,12 @@ function App() {
 
   return (
     <main style={{ width: "100vw", height: "100vh" }}>
-      <div
-        ref={view1}
-        style={{ height: 1500, width: "100%", border: "3px solid black" }}
-      />
+      <div ref={view1} style={{ height: 1500, width: "100%" }} />
       <div
         ref={view2}
         style={{
           height: 950,
           width: "100vw",
-          border: "3px solid green",
         }}
       />
 
@@ -69,6 +65,18 @@ function App() {
           />
         </View>
       </Canvas>
+
+      <div
+        style={{
+          height: "100%",
+          position: "relative",
+          top: -950,
+          pointerEvents: "auto",
+        }}
+      >
+        <NavBar />
+        <ClothingSection />
+      </div>
     </main>
   );
 }
