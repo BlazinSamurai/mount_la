@@ -38,42 +38,41 @@ function NavBar({ enableScroll, disableScroll }) {
 
   return (
     <>
-      {inputClicked ? (
-        <header className="navBar__change">
-          <section className="navBar__change-content">
-            <img src={logoImg} alt="Logo Image" className="navBar__logo" />
-            <search className="navBar__searchBar">
-              <img
-                src={searchIcon}
-                alt="Search Icon"
-                className="navBar__searchBar-icon"
-              />
-              <input
-                type="search"
-                name="searchBar"
-                placeholder="Search"
-                className={`navBar__searchBar-input`}
-                maxLength={15}
-              />
-            </search>
-            <button className="navBar__close-btn" onClick={handleSearchClose}>
-              <img
-                src={closeIcon}
-                alt="Close Icon"
-                className="navBar__close-img"
-              />
-            </button>
-          </section>
-          <Canvas camera={{ position: [0, 0, 5] }}>
-            <TopoBackground
-              colorOne={"dedada"}
-              colorTwo={"ffffff"}
-              viewHeight={25}
-              searchClicked={true}
-            />
-          </Canvas>
-        </header>
-      ) : (
+      {inputClicked ? null : (
+        // <header className="navBar__change">
+        //   <section className="navBar__change-content">
+        //     <img src={logoImg} alt="Logo Image" className="navBar__logo" />
+        //     <search className="navBar__searchBar">
+        //       <img
+        //         src={searchIcon}
+        //         alt="Search Icon"
+        //         className="navBar__searchBar-icon"
+        //       />
+        //       <input
+        //         type="search"
+        //         name="searchBar"
+        //         placeholder="Search"
+        //         className={`navBar__searchBar-input`}
+        //         maxLength={15}
+        //       />
+        //     </search>
+        //     <button className="navBar__close-btn" onClick={handleSearchClose}>
+        //       <img
+        //         src={closeIcon}
+        //         alt="Close Icon"
+        //         className="navBar__close-img"
+        //       />
+        //     </button>
+        //   </section>
+        //   <Canvas camera={{ position: [0, 0, 5] }}>
+        //     <TopoBackground
+        //       colorOne={"dedada"}
+        //       colorTwo={"ffffff"}
+        //       viewHeight={25}
+        //       searchClicked={true}
+        //     />
+        //   </Canvas>
+        // </header>
         <header className="navBar">
           <img src={logoImg} alt="Logo Image" className="navBar__logo" />
           <search className="navBar__searchBar">

@@ -1,6 +1,7 @@
 .clothing-section {
   position: relative;
-  margin: 0 25px;
+  /* margin: 0 25px; */
+  height: 800px;
 }
 
 .clothing-section__items {
